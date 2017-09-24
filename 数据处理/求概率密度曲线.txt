@@ -1,0 +1,7 @@
+ sApProMax=max(A);
+sApProMin=min(A);
+meanS=mean(A);
+x=linspace(sApProMin,sApProMax,20000+1);
+yy=hist(A,x);  %计算各个区间的个数
+yy=yy/length(A); %计算各个区间的比例
+bar(x,yy);

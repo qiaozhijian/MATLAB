@@ -1,0 +1,24 @@
+ clear x,y;
+x=tempera;
+y=vol;
+plot(x,y)
+for i=1:6
+    y2=polyfit(x,y,i);%尝试不同的阶数拟合
+    Y=polyval(y2,x);%计算拟合函数在x处的值。
+    if sum((Y-y).^2)<0.008
+      
+        c=i  %得到较为合适的一个阶数
+        break;
+    end
+end
+syms x f(x)
+f(x)=poly2sym(y2,x)%得到拟合出的表达式
+
+c =
+
+     1
+
+ 
+f(x) =
+ 
+(5926085532768405*x)/144115188075855872 - 3385750873080391/144115188075855872

@@ -1,0 +1,2 @@
+1.normpdf(X,MU,SIGMA) 某一点的概率密度
+2.normcdf(X,MU,SIGMA) 某一点的概率分布

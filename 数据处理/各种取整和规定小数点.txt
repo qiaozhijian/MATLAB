@@ -1,0 +1,14 @@
+Matlab取整函数有: fix, floor, ceil, round.具体应用方法如下：
+fix朝零方向取整，如fix(-1.3)=-1; fix(1.3)=1;
+floor，顾名思义，就是地板，所以是取比它小的整数，即朝负无穷方向取整，
+如floor(-1.3)=-2; floor(1.3)=1;floor(-1.8)=-2，floor(1.8)=1
+ceil，与floor相反，它的意思是天花板，也就是取比它大的最小整数，即朝正无穷方向取整，
+如ceil(-1.3)=-1; ceil(1.3)=2;ceil(-1.8)=-1，ceil(1.8)=2
+round四舍五入到最近的整数，如round(-1.3)=-1;round(-1.52)=-2;round(1.3)=1;round(1.52)=2。、
+
+
+
+tem=roundn(tem,-1); 把数组规定到小数点后一位
+simple(F)
+simplify(F)
+vpa(F,有效数字)  常常和digits函数配合使用

@@ -1,0 +1,6 @@
+sind()
+cosd()
+tand()
+atand()
+asind()
+acosd()

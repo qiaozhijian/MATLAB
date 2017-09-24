@@ -1,0 +1,11 @@
+clear  
+clc  
+  
+t= -100:0.001:100;  
+  
+syms x;  
+y = x/(x * x + 1);  
+f = inline(y);  
+  
+max = max(f(t))  
+min = min(f(t))  

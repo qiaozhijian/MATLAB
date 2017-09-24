@@ -1,0 +1,54 @@
+可以使用AWGN和WGN产生高斯白噪声。WGN用于产生高斯白噪声，AWGN则用于在某一信号中加入高斯白噪声。
+加性高斯白噪声 AWGN(Additive White Gaussian Noise) 是最基本的噪声与干扰模型。加性噪声：叠加在
+信号上的一种噪声，通常记为n(t)，而且无论有无信号，噪声n(t)都是始终存在的。因此通常称它为加性噪
+声或者加性干扰。白噪声：噪声的功率谱密度在所有的频率上均为一常数，则称这样的噪声为白噪声。如果
+白噪声取值的概率分布服从高斯分布，则称这样的噪声为高斯白噪声。
+MATLAB是美国MathWorks公司出品的商业数学软件，用于算法开发、数据可视化、数据分析以及数值计算的
+高级技术计算语言和交互式环境，主要包括MATLAB和Simulink两大部分。
+所谓高斯白噪声(White Gaussian Noise)中的高斯是指概率分布是正态函数，而白噪声是指它的二阶矩不
+相关，一阶矩为常数，是指先后信号在时间上的相关性。这是考查一个信号的两个不同方面的问题。
+高斯白噪声：如果一个噪声，它的瞬时值服从高斯分布，而它的功率谱密度又是均匀分布的，则称它为高斯白噪声。
+
+
+
+
+MATLAB中产生高斯白噪声的两个函数 
+MATLAB中产生高斯白噪声非常方便，可以直接应用两个函数，一个是WGN，另一个是AWGN。WGN用于产生高斯白噪声，AWGN则用于在某一信号中加入高斯白噪声。 
+1. WGN：产生高斯白噪声 
+y = wgn(m,n,p) 产生一个m行n列的高斯白噪声的矩阵，p以dBW为单位指定输出噪声的强度。 
+y = wgn(m,n,p,imp) 以欧姆(Ohm)为单位指定负载阻抗。 
+y = wgn(m,n,p,imp,state) 重置RANDN的状态。 
+在数值变量后还可附加一些标志性参数： 
+y = wgn(…,POWERTYPE) 指定p的单位。POWERTYPE可以是'dBW', 'dBm'或'linear'。线性强度(linear power)以瓦特(Watt)为单位。 
+y = wgn(…,OUTPUTTYPE) 指定输出类型。OUTPUTTYPE可以是'real'或'complex'。 
+2. AWGN：在某一信号中加入高斯白噪声 
+y = awgn(x,SNR) 在信号x中加入高斯白噪声。信噪比SNR以dB为单位。x的强度假定为0dBW。如果x是复数，就加入复噪声。 
+y = awgn(x,SNR,SIGPOWER) 如果SIGPOWER是数值，则其代表以dBW为单位的信号强度；如果SIGPOWER为'measured'，则函数将在加入噪声之前测定信号强度。 
+y = awgn(x,SNR,SIGPOWER,STATE) 重置RANDN的状态。 
+y = awgn(…,POWERTYPE) 指定SNR和SIGPOWER的单位。POWERTYPE可以是'dB'或'linear'。如果POWERTYPE是'dB'，那么SNR以dB为单位，而SIGPOWER以dBW为单位。如果POWERTYPE是'linear'，那么SNR作为比值来度量，而SIGPOWER以瓦特为单位。 
+注释 
+1. 分贝(decibel, dB)：分贝（dB）是表示相对功率或幅度电平的标准单位，换句话说，就是我们用来表示两个能量之间的差别的一种表示单位，它不是一个绝对单位。例如，电子系统中将电压、电流、功率等物理量的强弱通称为电平，电平的单位通常就以分贝表示，即事先取一个电压或电流作为参考值（0dB），用待表示的量与参考值之比取对数，再乘以20作为电平的分贝数（功率的电平值改乘10）。 
+2. 分贝瓦(dBW, dB Watt)：指以1W的输出功率为基准时，用分贝来测量的功率放大器的功率值。 
+3. dBm (dB-milliWatt)：即与1milliWatt（毫瓦）作比较得出的数字。 
+0 dBm = 1 mW 
+10 dBm = 10 mW 
+20 dBm = 100 mW 
+也可直接用randn函数产生高斯分布序列，例如： 
+y=randn(1,2500); 
+y=y/std(y); 
+y=y-mean(y); 
+a=0.0128; 
+b=sqrt(0.9596); 
+y=a+b*y; 
+就得到了 N ( 0.0128, 0.9596 ) 的高斯分布序列。
+
+
+
+y = awgn(x,SNR) 在信号x中加入高斯白噪声,信噪比SNR以dB为单位。x的强度假定为0dBW。
+比如:
+
+X = sqrt(2)*sin(0:pi/8:6*pi);
+
+Y = awgn(X,10);
+
+plot(X,'b');hold on; plot(Y,'r')

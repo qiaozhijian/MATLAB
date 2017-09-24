@@ -1,0 +1,2 @@
+A(find(isnan(A)))=mean(A(find(~isnan(A))));
+isreal(a)//¸´Êı

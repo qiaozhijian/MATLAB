@@ -1,0 +1,8 @@
+axis on 打开坐标轴的标签，刻度，背景
+axis square 坐标轴设置为正方形
+title('**') 设置名称
+axis([x y z d]) 设置x轴和y轴的范围
+xlabel('name','FontSize',[12])
+
+
+

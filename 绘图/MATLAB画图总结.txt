@@ -1,0 +1,7 @@
+矩阵排列画图
+subplot(2,2,1);plot(A);title('加噪信号');grid on
+subplot(2,2,2);plot(A*2);title('加噪信号1');grid on
+subplot(2,2,3);plot(A);title('加噪信号2');grid on
+grid on是为了加网格线
+figure是前面一张不删除.重画一张图
+hold on是保留上一张,不重画

@@ -1,0 +1,4 @@
+ for i=1:11520000/5
+experiment(i)=(gyro1withouttem(5*i)+gyro1withouttem(5*i-1)+gyro1withouttem(5*i-2)+gyro1withouttem(5*i-3)+gyro1withouttem(5*i-4))/5;
+end
+plot(experiment)

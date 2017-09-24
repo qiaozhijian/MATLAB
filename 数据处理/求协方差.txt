@@ -1,0 +1,6 @@
+cov(x,y)=[c_xx,c_xy; c_yx, c_yy];
+cov(A)算出的是一个n等于A的列数的,n*n矩阵
+cov:COV(X,Y), where X and Y are
+    vectors of equal length, is equivalent to COV([X(:) Y(:)]). 
+你的x，y分别是两个行向量。
+算出的2*2协方差矩阵的元素分别是cov（x，x）；cov（x，y）；cov（y，x）；cov（y，y）

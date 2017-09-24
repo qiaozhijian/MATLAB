@@ -1,0 +1,3 @@
+normest  向量二范数
+norm     向量的模
+abs      复数的模

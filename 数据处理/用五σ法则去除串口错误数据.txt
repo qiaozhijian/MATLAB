@@ -1,0 +1,5 @@
+[m n]=size(data2)
+ for i=1:n
+data2(find(abs(data2(:,i)-mean(data2(:,i)))>5*sqrt(var(data2(:,i)))),:)=[];
+end
+clear i

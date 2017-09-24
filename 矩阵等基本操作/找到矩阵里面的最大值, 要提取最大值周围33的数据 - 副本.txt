@@ -1,0 +1,2 @@
+[i,j]=find(B==max(max(B)));
+A=B(i-1:i+1,j-1:j+1);
