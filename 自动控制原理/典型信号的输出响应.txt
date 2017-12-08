@@ -1,0 +1,16 @@
+单位脉冲的输出响应 [y,x,t]=impulse(num,den,t);
+t=[0:0.1:10];
+num=[1];
+den=[1 1 1];
+[y,x,t]=impulse(num,den,t);
+plot(t,y)
+grid;
+xlabel('t')
+ylabel('y')
+title('单位脉冲响应')
+
+单位阶跃响应  [y,x,t]=step(num,den,t);
+
+单位斜坡响应  den 扩展一个0  den=[1 1 1 0]（分母*s）  再用单位阶跃响应
+
+任意函数  lsim(num,den,function,t)  num和den是传递函数方程式  funtion相对于给出时间t的函数值  二者维度相等

@@ -1,0 +1,4 @@
+persistent data;%记录上一次的误差，在函数尾
+if isempty(data)
+    data = 0;
+end

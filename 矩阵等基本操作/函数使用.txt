@@ -1,0 +1,17 @@
+匿名函数声明 f=@(x)x^2
+函数调用 f(1)=feval(@f,1)  syms t  f(t)=feval(@f,t)
+
+符号函数
+syms x y
+f=x+y;
+subs(f,[x,y],{[1,2],[1,2]})
+
+
+函数作为另一个函数的参数
+ff=@(x) x*5;
+
+function [ result ] = fff( f )
+f(1)
+end
+
+fff(ff);

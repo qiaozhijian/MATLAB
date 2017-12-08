@@ -1,5 +1,15 @@
 [m n]=size(data2)
  for i=1:n
-data2(find(abs(data2(:,i)-mean(data2(:,i)))>5*sqrt(var(data2(:,i)))),:)=[];
+data2(find((abs(data2(:,i)-mean(data2(:,i)))>5*sqrt(var(data2(:,i))))||(isnan(data(:,i)))),:)=[];
 end
-clear i
+clear i m n
+
+data(find(abs(data-mean(data))>5*sqrt(var(data))))=mean(data);
+
+
+
+ [m n]=size(data2)
+ for i=1:n
+data1(find((abs(data1(:,i)-mean(data1(:,i)))>5*sqrt(var(data1(:,i))))||(isnan(data1(:,i)))),:)=[];
+end
+clear i m n

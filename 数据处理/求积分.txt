@@ -1,3 +1,7 @@
 syms x,y,A
 f=A*exp(-x-y);
 C=int(int(f,x,0,inf),y,0,inf);
+
+f=@(x) x
+quad(f,1,2)
+quadv(f,1,2)		%这个函数好
